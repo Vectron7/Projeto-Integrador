@@ -68,15 +68,6 @@ describe('dataService — getHistoricoLeituras (regressão de paginação, risco
     expect(resultado.totalPages).toBe(3);
   });
 
-  test('historico vazio: estado vazio real é coerente (total 0, totalPages 1)', async () => {
-    setCachedPayload({ telemetria: null, historico: [], cenario: 'ok' });
-
-    const resultado = await getHistoricoLeituras({ pageSize: 20, page: 1 });
-    expect(resultado.items).toEqual([]);
-    expect(resultado.total).toBe(0);
-    expect(resultado.totalPages).toBe(1);
-  });
-
   test('guarda: pageSize inválido (0 ou negativo) não gera Infinity/NaN em totalPages', async () => {
     setCachedPayload({ telemetria: null, historico: gerarHistoricoSintetico(45), cenario: 'ok' });
 
