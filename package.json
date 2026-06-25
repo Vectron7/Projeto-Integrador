@@ -39,7 +39,8 @@
       "src/services/canteirosService.js",
       "src/services/routerService.js",
       "src/services/uiStateService.js",
-      "src/services/observabilityService.js"
+      "src/services/observabilityService.js",
+      "src/services/dataService.js"
     ],
     "coverageThreshold": {
       "global": {
