@@ -323,7 +323,7 @@ Riscos frontend adicionados na entrega A1.8, ancorados na mesma estrutura da §1
 | - | ---------- | -------------- | ----- | ----------- |
 | 8 | UC-01 · Alertas dashboard | XSS via nome de canteiro renderizado sem escape | Unitário | `unit.canteiros.xss-sanitize` |
 | 9 | UC-01 · Fetch layer | Falha silenciosa quando API e cache indisponíveis — tela em branco | Unitário | `unit.api.failover-offline` |
-| 10 | UC-02 · Histórico | Paginação retorna página vazia sem estado `empty` — operador assume bug | Unitário | `unit.historico.empty-page` |
+| 10 | UC-02 · Histórico | Paginação retorna página vazia sem estado `empty` — operador assume bug | Unitário | `unit.historico.pagination-regression` — **resolvido A2** · `dataService.test.js` |
 
 ### Rastreabilidade dashboard A1.8
 
@@ -333,6 +333,7 @@ Riscos frontend adicionados na entrega A1.8, ancorados na mesma estrutura da §1
 | `unit.canteiros.crud-validate` | Canteiros | `canteirosService.test.js` | #8 |
 | `unit.principal.alert-threshold-30` | Principal | `principalView.test.js` | #9 |
 | `unit.historico.csv-export` | Histórico | `principalView.test.js` | #10 |
+| `unit.historico.pagination-regression` | Histórico | `dataService.test.js` | #10 |
 | `e2e.dashboard.critical-flow` | Fluxo E2E | `e2e/dashboard-flow.spec.js` | #9, #10 |
 
 Evidências de execução: `docs/dashboard/evidencias/test-unit-a18.log`, `test-e2e-a18.log`

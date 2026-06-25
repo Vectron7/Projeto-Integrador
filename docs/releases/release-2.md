@@ -81,3 +81,7 @@ npm run test:e2e:install && npm run test:e2e
 ```
 
 Documentação: `docs/dashboard/threat-model.md`, `docs/ops/observability-dashboard.md`
+
+
+### A2 — Auditoria Individual (Victor Heredia Moura)
+- **Risco #10 resolvido:** blindagem de regressão na paginação do Histórico (`getHistoricoLeituras` em `dataService.js`). Adicionada sanitização de `page`/`pageSize` inválidos (0, negativo, não-inteiro) que gerava `totalPages: Infinity` silenciosamente. Suíte de regressão em `src/__tests__/dataService.test.js` — 6 casos cobrindo união disjunta, última página não-vazia, `page > totalPages` coerente, e guardas contra inputs inválidos. 160/160 testes passando.
